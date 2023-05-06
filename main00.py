@@ -1,13 +1,10 @@
 
 # Main00.  2개 온습도센서 (AM2302) 모니터 및 저장
 
-
 import serial
 import time
 import sys
 import keyboard
-
-
 
 # 통신포트 설정 및 에러처리    
 try:
