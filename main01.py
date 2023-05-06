@@ -31,15 +31,18 @@ add=0
 def Daq(c):                              # c 는 a 또는 b   (a:센서1, b:센서2)
     c=c.encode('utf8')
     Arduino.write(c) 
-    time.sleep(1)                  
     str1=Arduino.readline()
     output=str1.decode()
+    time.sleep(1)    
     return output    
 
 # Data 읽기 
 for i in range(1,50):                   # 측정 Data 길이 
     output11=Daq('a')                   # 센서 1 데이터 요청   
-    output22=Daq('b')                   # 센서 2 데이터 요청  
+    output22=Daq('b')                   # 센서 2 데이터 요청
+      
+    if keyboard.is_pressed("q"):        # q 누루고 있으면 출력             
+        break
 
     H1=output11[13:18]                  # 습도1 
     T1=output11[37:42]                  # 온도1
