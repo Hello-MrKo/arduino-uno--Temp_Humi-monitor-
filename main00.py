@@ -11,7 +11,7 @@ import keyboard
 
 # 통신포트 설정 및 에러처리    
 try:
-    Arduino=serial.Serial('com5',9600,timeout=2)
+    Arduino=serial.Serial('com4',9600,timeout=2)
     time.sleep(2)
 except:
     print("Device can not be found or can not be configured.")
